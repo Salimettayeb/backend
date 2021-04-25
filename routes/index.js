@@ -44,7 +44,7 @@ router.post('/doctor/authenticate', actionsdoct.authenticateDoctor)
 
 //@desc Get info on a doctor
 //@route GET /getinfo
-router.get('/doctor/getinfoDoctor', actionsdoct.getinfoDoctor)
+router.get('/doctor/getinfo', actionsdoct.getinfoDoctor)
 
 
 //Secretaire
@@ -55,11 +55,11 @@ router.post('/secretaire/addsecretaire', actionssec.addNewSecretaire)
 
 //@desc Authenticate a secretaire
 //@route POST /authenticate
-router.post('/secretaire/authenticatesecretaire', actionssec.authenticateSecretaire)
+router.post('/secretaire/authenticate', actionssec.authenticateSecretaire)
 
 //@desc Get info on a secretaire
 //@route GET /getinfo
-router.get('/secretaire/getinfosecretaire', actionssec.getinfoSecretaire)
+router.get('/secretaire/getinfo', actionssec.getinfoSecretaire)
 
 
 
