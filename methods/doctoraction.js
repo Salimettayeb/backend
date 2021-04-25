@@ -1,4 +1,4 @@
-var User = require('../models/doctor')
+var Doctor = require('../models/doctor')
 var jwt = require('jwt-simple')
 var config = require('../config/dbconfig')
 

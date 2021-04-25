@@ -6,7 +6,7 @@ var doctorSchema = new Schema({
         type: String,
         require: true
     },
-    password: {     
+    password: { 
         type: String,
         require: true
     }
@@ -30,7 +30,7 @@ doctorSchema.pre('save', function (next) {
     else {
         return next()
     }
-    })
+})
     doctorSchema.methods.comparePassword = function (passw, cb) {
         bcrypt.compare(passw, this.password, function (err, isMatch) {
             if(err) {

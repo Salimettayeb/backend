@@ -1,16 +1,16 @@
-var JwtStrategy = require('doctorauth-jwt').Strategy
-var ExtractJwt = require('doctorauth-jwt').ExtractJwt
+var JwtStrategy = require('passport-jwt').Strategy
+var ExtractJwt = require('passport-jwt').ExtractJwt
 
-var Doctor = require('../models/doctor')
+var doctor = require('../models/doctor')
 var config = require('./dbconfig')
 
-module.exports = function (doctorauth) {
+module.exports = function (passport) {
     var opts = {}
 
     opts.secretOrKey = config.secret
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt')
 
-    doctorauth.use(new JwtStrategy(opts, function (jwt_payload, done) {
+    passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
         doctor.find({
             id: jwt_payload.id
         }, function (err, doctor) {

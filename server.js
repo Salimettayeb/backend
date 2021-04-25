@@ -3,10 +3,13 @@ const morgan = require('morgan')
 const cors = require('cors')
 const connectDB = require('./config/db')
 const passport = require('passport')
-const doctor = require('doctor')
-const secretaire = require('secretaire')
+const doctor = require('./models/doctor')
+const secretaire = require('./models/secretaire')
 const bodyParser = require('body-parser')
 const routes = require('./routes/index')
+const doctorauth = require('./config/passport-doctor')
+const secretaireauth = require('./config/passport-secretaire')
+const user = require('./models/user')
 
 
 
@@ -25,15 +28,8 @@ app.use(routes)
 
 app.use(passport.initialize())
 require('./config/passport')(passport)
-
-app.use(doctor.initialize())
-require('./config/doctorauth')(passport)
-
-app.use(secretaire.initialize())
-require('./config/secretaireauth')(passport)
-
-
-
+require('./config/passport-doctor')(passport)
+require('./config/passport-secretaire')(passport)
 
 const PORT = process.env.PORT || 8000
 
