@@ -4,7 +4,7 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNewSecretaire: function (req, res) {
-        if ((!req.body.name) || (!req.body.password)) {
+        if ((!req.body.name) || (!req.body.email) || (!req.body.password)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
@@ -25,7 +25,7 @@ var functions = {
     },
     authenticateSecretaire: function (req, res) {
         Secretaire.findOne({
-            name: req.body.name
+            name: req.body.name,
         }, function (err, secretaire) {
                 if (err) throw err
                 if (!secretaire) {
