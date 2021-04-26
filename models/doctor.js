@@ -6,6 +6,7 @@ var doctorSchema = new Schema({
         type: String,
         require: true
     },
+    
 
     email:  {
        type: String, 
