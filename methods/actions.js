@@ -4,7 +4,7 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNew: function (req, res) {
-        if ((!req.body.name) || (!req.body.password)) {
+        if ((!req.body.name) || (!req.body.email) || (!req.body.password)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
@@ -25,7 +25,9 @@ var functions = {
     },
     authenticate: function (req, res) {
         User.findOne({
-            name: req.body.name
+            name: req.body.name,
+            email: req.body.email
+
         }, function (err, user) {
                 if (err) throw err
                 if (!user) {
