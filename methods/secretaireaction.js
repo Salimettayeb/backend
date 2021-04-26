@@ -10,6 +10,7 @@ var functions = {
         else {
             var newSecretaire = secretaire({
                 name: req.body.name,
+                email: req.body.email,
                 password: req.body.password
             });
             newSecretaire.save(function (err, newSecretaire) {

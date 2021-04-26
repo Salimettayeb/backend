@@ -10,6 +10,7 @@ var functions = {
         else {
             var newUser = User({
                 name: req.body.name,
+                email: req.body.email,
                 password: req.body.password
             });
             newUser.save(function (err, newUser) {
