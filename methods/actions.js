@@ -14,6 +14,7 @@ var functions = {
                 email: req.body.email,
                 password: req.body.password
             });
+            console.log(newUser)
             newUser.save(function (err, newUser) {
                 if (err) {
                     res.json({success: false, msg: 'Failed to save'})

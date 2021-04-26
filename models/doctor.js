@@ -4,18 +4,16 @@ var bcrypt = require('bcrypt')
 var doctorSchema = new Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
-    
-
     email:  {
        type: String, 
-       require: true
+       required: true
     
     },
     password: { 
         type: String,
-        require: true
+        required: true
     }
 })
 doctorSchema.pre('save', function (next) {
