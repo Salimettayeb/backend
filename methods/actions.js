@@ -4,8 +4,9 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNew: function (req, res) {
+        console.log(req.body)
         if ((!req.body.name) || (!req.body.email) || (!req.body.password)) {
-            res.json({success: false, msg: 'Enter all fields'})
+           return res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newUser = User({
