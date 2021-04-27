@@ -11,7 +11,7 @@ module.exports = function (passport) {
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt')
 
     passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
-        doctor.find({
+        Doctor.find({
             id: jwt_payload.id
         }, function (err, doctor) {
                 if (err) {

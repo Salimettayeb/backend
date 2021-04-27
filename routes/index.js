@@ -1,7 +1,7 @@
 const express = require('express')
 const actions = require('../methods/actions')
-const actionsdoct = require('../methods/doctoraction')
-const actionssec = require('../methods/secretaireaction')
+const doctoraction = require('../methods/doctoraction')
+const secretaireaction = require('../methods/secretaireaction')
 
 const router = express.Router()
 
@@ -12,12 +12,7 @@ router.get('/', (req, res) => {
 router.get('/dashboard', (req, res) => {
     res.send('Dashboard')
 })
-router.get('/doctor', (req, res) => {
-    res.send('doctor')
-})
-router.get('/secretaire', (req, res) => {
-    res.send('Secretaire')
-})
+
 
 //@desc Adding new user
 //@route POST /adduser
@@ -36,30 +31,30 @@ router.get('/getinfo', actions.getinfo)
 
 //@desc Adding new doctor
 //@route POST /adddoctor
-router.post('/doctor/adddoctor', actionsdoct.addNewDoctor)
+router.post('/doctor/adddoctor', doctoraction.addNewDoctor)
 
 //@desc Authenticate a doctor
 //@route POST /authenticate
-router.post('/doctor/authenticate', actionsdoct.authenticateDoctor)
+router.post('/doctor/authenticatedoctor', doctoraction.authenticateDoctor)
 
 //@desc Get info on a doctor
 //@route GET /getinfo
-router.get('/doctor/getinfo', actionsdoct.getinfoDoctor)
+router.get('/doctor/getinfodoctor', doctoraction.getinfoDoctor)
 
 
 //Secretaire
 
 //@desc Adding new secretaire
 //@route POST /adddoctor
-router.post('/secretaire/addsecretaire', actionssec.addNewSecretaire)
+router.post('/secretaire/addsecretaire', secretaireaction.addNewSecretaire)
 
 //@desc Authenticate a secretaire
 //@route POST /authenticate
-router.post('/secretaire/authenticate', actionssec.authenticateSecretaire)
+router.post('/secretaire/authenticateSecretaire', secretaireaction.authenticateSecretaire)
 
 //@desc Get info on a secretaire
 //@route GET /getinfo
-router.get('/secretaire/getinfo', actionssec.getinfoSecretaire)
+router.get('/secretaire/getinfos', secretaireaction.getinfoSecretaire)
 
 
 
