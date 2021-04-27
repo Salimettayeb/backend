@@ -25,6 +25,7 @@ var functions = {
     },
     authenticateSecretaire: function (req, res) {
         Secretaire.findOne({
+            email: req.body.email,
         }, function (err, secretaire) {
                 if (err) throw err
                 if (!secretaire) {

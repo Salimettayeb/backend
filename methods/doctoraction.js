@@ -26,7 +26,8 @@ var functions = {
     },
     authenticateDoctor: function (req, res) {
         Doctor.findOne({
-            email: req.body.email,
+         email: req.body.email,
+
         }, function (err, doctor) {
                 if (err) throw err
                 if (!doctor) {
