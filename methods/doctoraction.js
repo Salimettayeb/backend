@@ -4,12 +4,14 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNewDoctor: function (req, res) {
+        console.log(added)
         if ((!req.body.name) || (!req.body.password)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newDoctor = Doctor({
                 name: req.body.name,
+                email: req.body.email,
                 password: req.body.password
             });
             newDoctor.save(function (err, newDoctor) {
@@ -24,7 +26,7 @@ var functions = {
     },
     authenticateDoctor: function (req, res) {
         Doctor.findOne({
-            name: req.body.name
+            email: req.body.email,
         }, function (err, doctor) {
                 if (err) throw err
                 if (!doctor) {
