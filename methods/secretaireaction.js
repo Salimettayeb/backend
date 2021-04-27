@@ -23,9 +23,9 @@ var functions = {
             })
         }
     },
-    authenticateSecretaire: function (req, res) {
+    authenticate: function (req, res) {
         Secretaire.findOne({
-            name: req.body.name,
+            email: req.body.email,
         }, function (err, secretaire) {
                 if (err) throw err
                 if (!secretaire) {
