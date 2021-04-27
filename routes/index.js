@@ -12,7 +12,12 @@ router.get('/', (req, res) => {
 router.get('/dashboard', (req, res) => {
     res.send('Dashboard')
 })
-
+router.get('/doctor', (req, res) => {
+    res.send('doctor')
+})
+router.get('/secretaire', (req, res) => {
+    res.send('Secretaire')
+})
 
 //@desc Adding new user
 //@route POST /adduser
@@ -50,11 +55,11 @@ router.post('/secretaire/addsecretaire', secretaireaction.addNewSecretaire)
 
 //@desc Authenticate a secretaire
 //@route POST /authenticate
-router.post('/secretaire/authenticateSecretaire', secretaireaction.authenticateSecretaire)
+router.post('/secretaire/authenticatesecretaire', secretaireaction.authenticateSecretaire)
 
 //@desc Get info on a secretaire
 //@route GET /getinfo
-router.get('/secretaire/getinfos', secretaireaction.getinfoSecretaire)
+router.get('/secretaire/getinfosecretaire', secretaireaction.getinfoSecretaire)
 
 
 

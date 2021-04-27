@@ -7,8 +7,9 @@ const doctor = require('./models/doctor')
 const secretaire = require('./models/secretaire')
 const user = require('./models/user')
 const bodyParser = require('body-parser')
+const routes = require('./routes/index')
 const passportdoctor = require('./config/passportdoctor')
-const passportsecr = require('./config/passportsecretaire')
+const passportsecretaire = require('./config/passportsecretaire')
 
 
 
@@ -19,10 +20,10 @@ const app = express()
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
-
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
+app.use(routes)
 
 app.use(passport.initialize())
 require('./config/passport')(passport)

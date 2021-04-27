@@ -1,7 +1,7 @@
 var JwtStrategy = require('passport-jwt').Strategy
 var ExtractJwt = require('passport-jwt').ExtractJwt
 
-var doctor = require('../models/doctor')
+var Doctor = require('../models/doctor')
 var config = require('./dbconfig')
 
 module.exports = function (passport) {
