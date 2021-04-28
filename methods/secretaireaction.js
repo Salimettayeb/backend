@@ -8,7 +8,7 @@ var functions = {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
-            var newSecretaire = secretaire({
+            var newSecretaire = Secretaire({
                 name: req.body.name,
                 email: req.body.email,
                 password: req.body.password
