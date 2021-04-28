@@ -1,4 +1,4 @@
-var secretaire = require('../models/secretaire')
+var Secretaire = require('../models/secretaire')
 var jwt = require('jwt-simple')
 var config = require('../config/dbconfig')
 
