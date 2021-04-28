@@ -25,13 +25,13 @@ var functions = {
     },
     authenticateSecretaire: function (req, res) {
         Secretaire.findOne({
-            name: req.body.name,
 
-            email: req.body.email,
+         email: req.body.email,
+
         }, function (err, secretaire) {
                 if (err) throw err
                 if (!secretaire) {
-                    res.status(403).send({success: false, msg: 'Authentication Failed, User not found'})
+                    res.status(403).send({success: false, msg: 'Authentication Failed, Secretaire not found'})
                 }
 
                 else {

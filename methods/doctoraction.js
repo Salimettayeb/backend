@@ -25,12 +25,13 @@ var functions = {
     },
     authenticateDoctor: function (req, res) {
         Doctor.findOne({
+
          email: req.body.email,
 
         }, function (err, doctor) {
                 if (err) throw err
                 if (!doctor) {
-                    res.status(403).send({success: false, msg: 'Authentication Failed, User not found'})
+                    res.status(403).send({success: false, msg: 'Authentication Failed, Doctor not found'})
                 }
 
                 else {
