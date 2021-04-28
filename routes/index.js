@@ -55,7 +55,7 @@ router.post('/secretaire/addsecretaire', secretaireaction.addNewSecretaire)
 
 //@desc Authenticate a secretaire
 //@route POST /authenticate
-router.post('/secretaire/authenticatesecretaire', secretaireaction.authenticateSecretaire)
+router.post('/secretaire/authenticateSecretaire', secretaireaction.authenticateSecretaire)
 
 //@desc Get info on a secretaire
 //@route GET /getinfo

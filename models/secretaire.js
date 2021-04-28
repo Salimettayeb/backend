@@ -4,11 +4,16 @@ var bcrypt = require('bcrypt')
 var secretaireSchema = new Schema({
     name: {
         type: String,
-        require: true
+        required: true
     },
+    email:  {
+        type: String, 
+        required: true
+     
+     },
     password: {
         type: String,
-        require: true
+        required: true
     }
 })
 secretaireSchema.pre('save', function (next) {
@@ -40,4 +45,4 @@ secretaireSchema.pre('save', function (next) {
             cb(null, isMatch)
         })
     }
-module.exports = mongoose.model('Secretaire', secretaireSchema)
+    module.exports = mongoose.model('Secretaire', secretaireSchema)
