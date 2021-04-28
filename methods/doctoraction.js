@@ -4,7 +4,6 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNewDoctor: function (req, res) {
-        console.log(added)
         if ((!req.body.name) || (!req.body.password)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
