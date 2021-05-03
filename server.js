@@ -6,10 +6,11 @@ const passport = require('passport')
 const doctor = require('./models/doctor')
 const secretaire = require('./models/secretaire')
 const user = require('./models/user')
+const fiche = require('./models/fiche')
+
 const bodyParser = require('body-parser')
 const routes = require('./routes/index')
-const passportdoctor = require('./config/passportdoctor')
-const passportsecretaire = require('./config/passportsecretaire')
+
 
 
 
@@ -29,6 +30,8 @@ app.use(passport.initialize())
 require('./config/passport')(passport)
 require('./config/passportdoctor')(passport)
 require('./config/passportsecretaire')(passport)
+require('./config/passportaddpatient')(passport)
+
 
 const PORT = process.env.PORT || 8000
 
