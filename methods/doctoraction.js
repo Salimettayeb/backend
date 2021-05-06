@@ -8,6 +8,7 @@ var functions = {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
+            
             var newDoctor = Doctor({
                 name: req.body.name,
                 email: req.body.email,
