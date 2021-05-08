@@ -4,7 +4,7 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNewFiche: function (req, res) {
-        if ((!req.body.name) || (!req.body.dateOfBirth)) {
+        if ((!req.body.name) || (!req.body.dateOfBirth) || (!req.body.phone) || (!req.body.email) || (!req.body.address) || (!req.body.state)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
