@@ -9,12 +9,16 @@ var functions = {
         }
         else {
             var newFiche = Fiche({
+                filenbre: req.body.filenbre,
                 name: req.body.name,
                 dateOfBirth: req.body.dateOfBirth,
                 phone: req.body.phone,
                 email: req.body.email,
                 address: req.body.address,
                 state: req.body.state,
+                profession: req.body.profession,
+                materialStatus: req.body.materialStatus,
+                nbrchildren: req.body.nbrchildren,
                 
             });
             newFiche.save(function (err, newFiche) {
