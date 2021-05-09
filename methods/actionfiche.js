@@ -4,21 +4,27 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNewFiche: function (req, res) {
-        if ((!req.body.name) || (!req.body.dateOfBirth) || (!req.body.phone) || (!req.body.email) || (!req.body.address) || (!req.body.state)) {
+        if ((!req.body.filenbre) || 
+            (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateOfBirth) ||
+            (!req.body.age) || (!req.body.profession) || (!req.body.materialStatus) ||
+             (!req.body.nbrchildren) || (!req.body.phonenumber) (!req.body.email) ||
+         (!req.body.address) || (!req.body.state)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newFiche = Fiche({
                 filenbre: req.body.filenbre,
-                name: req.body.name,
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
                 dateOfBirth: req.body.dateOfBirth,
-                phone: req.body.phone,
-                email: req.body.email,
-                address: req.body.address,
-                state: req.body.state,
+                age: req.body.age,
                 profession: req.body.profession,
                 materialStatus: req.body.materialStatus,
                 nbrchildren: req.body.nbrchildren,
+                phonenumber: req.body.phone,
+                email: req.body.email,
+                address: req.body.address,
+                state: req.body.state,
                 
             });
             newFiche.save(function (err, newFiche) {
