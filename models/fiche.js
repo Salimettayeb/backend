@@ -26,11 +26,11 @@ var ficheSchema = new Schema({
         type: String,
         required: true
     },
-    materialStatus: {
+    valueChoose: {
         type: String,
         required: true
     },
-    nbrchildren: {
+    childChosed: {
         type: String,
         required: true
     },
@@ -46,7 +46,7 @@ var ficheSchema = new Schema({
         type: String,
         required: true
     },
-    state: {
+    cityChosed: {
         type: String,
         required: true
     },
