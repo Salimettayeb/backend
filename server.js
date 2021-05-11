@@ -7,6 +7,7 @@ const doctor = require('./models/doctor')
 const secretaire = require('./models/secretaire')
 const user = require('./models/user')
 const fiche = require('./models/fiche')
+const consultation = require('./models/consultation')
 
 const bodyParser = require('body-parser')
 const routes = require('./routes/index')
@@ -31,6 +32,8 @@ require('./config/passport')(passport)
 require('./config/passportdoctor')(passport)
 require('./config/passportsecretaire')(passport)
 require('./config/passportaddpatient')(passport)
+require('./config/passportaddconsultation')(passport)
+
 
 
 const PORT = process.env.PORT || 8000

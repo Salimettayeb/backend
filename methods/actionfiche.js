@@ -6,25 +6,25 @@ var functions = {
     addNewFiche: function (req, res) {
         if ((!req.body.filenbre) || 
             (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateOfBirth) ||
-            (!req.body.age) || (!req.body.profession) || (!req.body.materialStatus) ||
-             (!req.body.nbrchildren) || (!req.body.phonenumber) (!req.body.email) ||
-         (!req.body.address) || (!req.body.state)) {
+            (!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) ||
+             (!req.body.childChosed) || (!req.body.phonenumber) (!req.body.email) ||
+         (!req.body.address) || (!req.body.cityChosed)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newFiche = Fiche({
-                filenbre: req.body.filenbre,
+                filenumbre: req.body.filenbre,
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 dateOfBirth: req.body.dateOfBirth,
                 age: req.body.age,
                 profession: req.body.profession,
-                materialStatus: req.body.materialStatus,
-                nbrchildren: req.body.nbrchildren,
+                valueChoose: req.body.valueChoose,
+                childChosed: req.body.childChosed,
                 phonenumber: req.body.phone,
                 email: req.body.email,
                 address: req.body.address,
-                state: req.body.state,
+                cityChosed: req.body.cityChosed,
                 
             });
             newFiche.save(function (err, newFiche) {
