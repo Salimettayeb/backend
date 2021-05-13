@@ -12,6 +12,7 @@ var functions = {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
+            console.log(req.body)
             var newConsultation = Consultation({
                 name: req.body.name,
                 filenumber: req.body.filenumber,
@@ -24,6 +25,7 @@ var functions = {
             });
             newConsultation.save(function (err, newConsultation) {
                 if (err) {
+                    console.log(req.body)
                     res.json({success: false, msg: 'Failed to save'})
                 }
                 else {
