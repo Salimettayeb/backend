@@ -4,7 +4,8 @@ var config = require('../config/dbconfig')
 
 var functions = {
     addNewFiche: function (req, res) {
-        if ((!req.body.filenbre) || 
+        console.log(req.body)
+        if ((!req.body.filenumbre) || 
             (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateOfBirth) ||
             (!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) ||
              (!req.body.childChosed) || (!req.body.phonenumber) (!req.body.email) ||
