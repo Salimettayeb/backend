@@ -26,6 +26,7 @@ var functions = {
             });
             newConsultation.save(function (err, newConsultation) {
                 if (err) {
+                    console.log(err);
                     res.json({success: false, msg: 'Failed to save'})
                 }
                 else {
