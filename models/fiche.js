@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt')
 var ficheSchema = new Schema({
-    filenumbre: {
+    filenumber: {
         type: String,
         required: true
     },
@@ -14,7 +14,7 @@ var ficheSchema = new Schema({
         type: String,
         required: true
     },
-    dateOfBirth:  {
+    dateofbirth:  {
         type: String, 
         required: true
     },

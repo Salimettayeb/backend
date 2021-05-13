@@ -5,8 +5,8 @@ var config = require('../config/dbconfig')
 var functions = {
     addNewFiche: function (req, res) {
         console.log(req.body)
-        if ((!req.body.filenumbre) || 
-            (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateOfBirth) ||
+        if ((!req.body.filenumber) || 
+            (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||
             (!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) ||
              (!req.body.childChosed) || (!req.body.phonenumber) (!req.body.email) ||
          (!req.body.address) || (!req.body.cityChosed)) {
@@ -30,6 +30,7 @@ var functions = {
             });
             newFiche.save(function (err, newFiche) {
                 if (err) {
+                    console.log(err);
                     res.json({success: false, msg: 'Failed to save'})
                 }
                 else {
