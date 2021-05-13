@@ -14,7 +14,7 @@ var functions = {
         }
         else {
             var newFiche = Fiche({
-                filenumbre: req.body.filenbre,
+                filenumber: req.body.filenumber,
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
                 dateOfBirth: req.body.dateOfBirth,
@@ -22,7 +22,7 @@ var functions = {
                 profession: req.body.profession,
                 valueChoose: req.body.valueChoose,
                 childChosed: req.body.childChosed,
-                phonenumber: req.body.phone,
+                phonenumber: req.body.phonenumber,
                 email: req.body.email,
                 address: req.body.address,
                 cityChosed: req.body.cityChosed,
