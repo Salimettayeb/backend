@@ -8,10 +8,12 @@ const secretaire = require('./models/secretaire')
 const user = require('./models/user')
 const fiche = require('./models/fiche')
 const consultation = require('./models/consultation')
+const appoinment = require('./models/appoinment')
+const medfolder = require('./models/medfolder')
 
 const bodyParser = require('body-parser')
-const routes = require('./routes/index')
 
+const routes = require('./routes/index')
 
 
 
@@ -33,6 +35,10 @@ require('./config/passportdoctor')(passport)
 require('./config/passportsecretaire')(passport)
 require('./config/passportaddpatient')(passport)
 require('./config/passportaddconsultation')(passport)
+require('./config/passportappoinment')(passport)
+require('./config/passportmedicalfolder')(passport)
+
+
 
 
 

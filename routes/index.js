@@ -4,6 +4,8 @@ const doctoraction = require('../methods/doctoraction')
 const secretaireaction = require('../methods/secretaireaction')
 const actionfiche = require('../methods/actionfiche')
 const actionconsultation =require('../methods/actionconsultation')
+const actionappoinment =require('../methods/actionappoinment')
+const actionmedfolder =require('../methods/actionmedfolder')
 
 
 const router = express.Router()
@@ -23,6 +25,9 @@ router.get('/secretaire', (req, res) => {
 })
 router.get('/fichepatient', (req, res) => {
     res.send('fichepatient')
+})
+router.get('/medicalfolders', (req, res) => {
+    res.send('medicalfolders')
 })
 //@desc Adding new user
 //@route POST /adduser
@@ -69,8 +74,17 @@ router.get('/secretaire/getinfosecretaire', secretaireaction.getinfoSecretaire)
 
 //Add new fiche patient 
 router.post('/fichepatient/addnewfiche', actionfiche.addNewFiche)
-//Add new fiche patient 
+
+//Add new consultation 
 router.post('/consultations/addnewconsultation', actionconsultation.addNewConsultation)
+
+//add new appoinment 
+router.post('/appoinments/addnewappoinment', actionappoinment.addNewAppoinment)
+
+
+//add new appoinment 
+router.post('/medicalfolders/addnewmedfolder', actionmedfolder.addNewMedfolder)
+
 
 
 module.exports = router
