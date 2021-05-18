@@ -15,8 +15,6 @@ const bodyParser = require('body-parser')
 
 const routes = require('./routes/index')
 
-
-
 connectDB()
 
 const app = express()

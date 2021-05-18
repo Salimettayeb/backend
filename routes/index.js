@@ -22,9 +22,15 @@ router.get('/doctor', (req, res) => {
 })
 router.get('/secretaire', (req, res) => {
     res.send('Secretaire')
-})
+}) 
 router.get('/fichepatient', (req, res) => {
     res.send('fichepatient')
+})
+router.get('/consultations', (req, res) => {
+    res.send('consultations')
+})
+router.get('/appoinments', (req, res) => {
+    res.send('appoinments')
 })
 router.get('/medicalfolders', (req, res) => {
     res.send('medicalfolders')
@@ -76,15 +82,15 @@ router.get('/secretaire/getinfosecretaire', secretaireaction.getinfoSecretaire)
 router.post('/fichepatient/addnewfiche', actionfiche.addNewFiche)
 
 //Add new consultation 
-router.post('/consultations/addnewconsultation', actionconsultation.addNewConsultation)
+router.post('/consultation/addnewconsultation', actionconsultation.addNewConsultation)
 
 //add new appoinment 
-router.post('/appoinments/addnewappoinment', actionappoinment.addNewAppoinment)
+router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
 
 
-//add new appoinment 
-router.post('/medicalfolders/addnewmedfolder', actionmedfolder.addNewMedfolder)
-
+//add new medical folder
+router.post('/medicalfolder/addnewmedfolder', actionmedfolder.addNewMedFolder)
+ 
 
 
 module.exports = router
