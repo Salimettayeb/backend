@@ -33,7 +33,6 @@ require('./config/passportdoctor')(passport)
 require('./config/passportsecretaire')(passport)
 require('./config/passportaddpatient')(passport)
 require('./config/passportaddconsultation')(passport)
-require('./config/passportappoinment')(passport)
 require('./config/passportmedicalfolder')(passport)
 
 

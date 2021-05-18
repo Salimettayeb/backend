@@ -85,7 +85,7 @@ router.post('/fichepatient/addnewfiche', actionfiche.addNewFiche)
 router.post('/consultation/addnewconsultation', actionconsultation.addNewConsultation)
 
 //add new appoinment 
-router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
+//router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
 
 
 //add new medical folder
