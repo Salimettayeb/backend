@@ -6,11 +6,15 @@ var functions = {
     addNewConsultation: function (req, res) {
         console.log(req.body)
 
-        if ((!req.body.name) || (!req.body.filenumber) || (!req.body.weight) || (!req.body.height) ||(!req.body.reasonofconsultation) || (!req.body.diagnosticresult) ||(!req.body.notes)) {
+        if ((!req.body.date) || (!req.body.time) || (!req.body.name) || (!req.body.filenumber) || (!req.body.weight) ||
+         (!req.body.height) ||(!req.body.reasonofconsultation) || (!req.body.diagnosticresult) ||
+         (!req.body.notes)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newConsultation = Consultation({
+                date: req.body.date,
+                time: req.body.time,
                 name: req.body.name,
                 filenumber: req.body.filenumber,
                 weight: req.body.weight,
