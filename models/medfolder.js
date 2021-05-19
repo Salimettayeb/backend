@@ -30,4 +30,4 @@ var medfolderSchema = new Schema({
 
 
 
-module.exports = mongoose.model('medfolder', medfolderSchema)
+module.exports = mongoose.model('Medfolder', medfolderSchema)
