@@ -6,9 +6,7 @@ var functions = {
     addNewConsultation: function (req, res) {
         console.log(req.body)
 
-        if ((!req.body.date) || (!req.body.time) || (!req.body.name) || (!req.body.filenumber) || (!req.body.weight) ||
-         (!req.body.height) ||(!req.body.reasonofconsultation) || (!req.body.diagnosticresult) ||
-         (!req.body.notes)) {
+        if ((!req.body.date) || (!req.body.time) || (!req.body.name) || (!req.body.filenumber) || (!req.body.weight) || (!req.body.height) ||(!req.body.reasonofconsultation) || (!req.body.diagnosticresult) || (!req.body.notes)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
