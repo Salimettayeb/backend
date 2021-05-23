@@ -5,12 +5,13 @@ var config = require('../config/dbconfig')
 var functions = {
     addNewMedFolder: function (req, res) {
         console.log(req.body)
-        if ((!req.body.name) || (!req.body.filenumber) || (!req.body.personnalantecedents) ||
+        if ((!req.body.doctorId) || (!req.body.name) || (!req.body.filenumber) || (!req.body.personnalantecedents) ||
          (!req.body.familyantecedent) || (!req.body.riskfactors) || (!req.body.notes)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newMedFolder = MedFolder({
+                doctorId: req.body.doctorId,
                 name: req.body.name,
                 filenumber: req.body.filenumber,
                 personnalantecedents: req.body.personnalantecedents,
@@ -29,5 +30,12 @@ var functions = {
             })
         }
        
-    }}
+    },
+
+    getinfoMedicalFolder: async function (req, res) {
+        console.log(req.payload);
+      let medfolders = await MedFolder.find({doctorId: req.payload._id});
+      return res.json({success: true, medfolders: medfolders});
+    }
+}
     module.exports = functions
