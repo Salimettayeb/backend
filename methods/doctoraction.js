@@ -39,7 +39,7 @@ var functions = {
                     doctor.comparePassword(req.body.password, function (err, isMatch) {
                         if (isMatch && !err) {
                             var token = jwt.encode(doctor, config.secret)
-                            res.json({success: true, token: token})
+                            res.json({success: true, token: token,doctor: doctor})
                         }
                         else {
                             return res.status(403).send({success: false, msg: 'Authentication failed, wrong password'})

@@ -5,12 +5,13 @@ var config = require('../config/dbconfig')
 var functions = {
     addNewFiche: function (req, res) {
         console.log(req.body)
-        if ((!req.body.gender) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
+        if ((!req.body.doctorId) || (!req.body.groupValue) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newFiche = Fiche({
-                gender: req.body.gender,
+                doctorId: req.body.doctorId,
+                groupValue: req.body.groupValue,
                 filenumber: req.body.filenumber,
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,
@@ -36,5 +37,13 @@ var functions = {
             })
         }
        
-    }}
+    },
+
+    getinfoFiche: async function (req, res) {
+
+      let fiches = await Fiche.find({doctorId: req.payload._id});
+      return res.json({success: true, fiches: fiches});
+    }
+
+}
     module.exports = functions

@@ -2,6 +2,15 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt')
 var ficheSchema = new Schema({
+    doctorId: {
+        type: Schema.Types.ObjectId,
+        ref:"Doctor",
+        required: true
+    },
+    groupValue: {
+        type: String,
+        required: true
+    },
     filenumber: {
         type: String,
         required: true
