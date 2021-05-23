@@ -40,7 +40,7 @@ var functions = {
     },
 
     getinfoFiche: async function (req, res) {
-
+        console.log(req.payload);
       let fiches = await Fiche.find({doctorId: req.payload._id});
       return res.json({success: true, fiches: fiches});
     }
