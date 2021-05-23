@@ -8,24 +8,21 @@ const actionappoinment =require('../methods/actionappoinment')
 const actionmedfolder =require('../methods/actionmedfolder')
 const router = express.Router()
 
-const jwt = require('express-jwt');
+const jwt = require('jsonwebtoken');
 const config = require('../config/dbconfig')
 
-/*
-const doctorAuth = jwt({
-  secret: config.secret,
-  doctorProperty: 'payload',
-  algorithms: ['HS256']
-});
-*/
+
 
 const doctorAuth = (req,res,next)=>{
-        console.log(req);
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token, accessTokenSecret, (err, doctor) => {
+        if (err) {
+            return res.status(403);
+        }
+        req.payload = doctor;
         next();
+    });  
     };
-  
-
-
 
 router.get('/', (req, res) => {
     res.send('Hello World')
