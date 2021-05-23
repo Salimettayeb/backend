@@ -32,6 +32,7 @@ var functions = {
                     res.json({success: false, msg: 'Failed to save'})
                 }
                 else {
+                    console.log("ssqvedd");
                     res.json({success: true, msg: 'Successfully saved'})
                 }
             })
