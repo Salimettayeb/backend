@@ -7,13 +7,13 @@ var functions = {
         console.log(req.body)
         console.log("ddddddddddddd")
 
-        if ((!req.body.doctorId) || (!req.body.groupValue) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
+        if ((!req.body.doctorId) || (!req.body.gender) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newFiche = Fiche({
                 doctorId: req.body.doctorId,
-                groupValue: req.body.groupValue,
+                gender: req.body.gender,
                 filenumber: req.body.filenumber,
                 firstname: req.body.firstname,
                 lastname: req.body.lastname,

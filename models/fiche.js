@@ -7,7 +7,7 @@ var ficheSchema = new Schema({
         ref:"Doctor",
         required: true
     },
-    groupValue: {
+    gender: {
         type: String,
         required: true
     },
