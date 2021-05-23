@@ -14,6 +14,10 @@ const config = require('../config/dbconfig')
 
 
 const doctorAuth = (req,res,next)=>{
+    console.log(req.get("Authorization"));
+    console.log(req.get("authorization"));
+    console.log(req.headers["authorization"]);
+
     const token = req.headers["Authorization"].split(' ')[1];
     jwt.verify(token, config.secret, (err, doctor) => {
         if (err) {
