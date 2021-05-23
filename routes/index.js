@@ -108,6 +108,11 @@ router.post('/consultation/addnewconsultation', actionconsultation.addNewConsult
 //add new appoinment 
 router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
 
+//get info appoinments 
+
+router.get('/appoinment/getinfo', doctorAuth, actionappoinment.getinfoAppoinment)
+
+
 
 //add new medical folder
 router.post('/medicalfolder/addnewmedfolder', actionmedfolder.addNewMedFolder)
