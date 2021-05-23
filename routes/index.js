@@ -14,8 +14,8 @@ const config = require('../config/dbconfig')
 
 
 const doctorAuth = (req,res,next)=>{
-    const token = authHeader.split(' ')[1];
-    jwt.verify(token, accessTokenSecret, (err, doctor) => {
+    const token = req.headers["Authorization"].split(' ')[1];
+    jwt.verify(token, config.secret, (err, doctor) => {
         if (err) {
             return res.status(403);
         }
