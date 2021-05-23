@@ -2,6 +2,11 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt')
 var medfolderSchema = new Schema({
+    doctorId: {
+        type: Schema.Types.ObjectId,
+        ref:"Doctor",
+        required: true
+    },
     name: {
         type: String,
         required: true
