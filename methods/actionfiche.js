@@ -27,6 +27,7 @@ var functions = {
                 
             });
             newFiche.save(function (err, newFiche) {
+                console.log("ddddddddddddd")
                 if (err) {
                     console.log(err);
                     res.json({success: false, msg: 'Failed to save'})
