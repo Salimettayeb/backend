@@ -5,6 +5,8 @@ var config = require('../config/dbconfig')
 var functions = {
     addNewFiche: function (req, res) {
         console.log(req.body)
+        console.log("ddddddddddddd")
+
         if ((!req.body.doctorId) || (!req.body.groupValue) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
