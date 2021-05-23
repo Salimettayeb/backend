@@ -99,6 +99,9 @@ router.post('/fichepatient/addnewfiche', actionfiche.addNewFiche)
 router.get('/fichepatient/getinfofiche', doctorAuth, actionfiche.getinfoFiche)
 
 
+
+
+
 //Add new consultation 
 router.post('/consultation/addnewconsultation', actionconsultation.addNewConsultation)
 
@@ -108,6 +111,10 @@ router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
 
 //add new medical folder
 router.post('/medicalfolder/addnewmedfolder', actionmedfolder.addNewMedFolder)
+
+//get info medical folder
+router.get('/medicalfolder/getinfomedicalfolder', doctorAuth, actionmedfolder.getinfoMedFolder)
+
  
 
 
