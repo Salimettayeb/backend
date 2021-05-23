@@ -6,7 +6,6 @@ const actionfiche = require('../methods/actionfiche')
 const actionconsultation =require('../methods/actionconsultation')
 const actionappoinment =require('../methods/actionappoinment')
 const actionmedfolder =require('../methods/actionmedfolder')
-const doctorMiddleware =require('../middlewares/doctor')
 const router = express.Router()
 
 const jwt = require('express-jwt');
