@@ -33,7 +33,7 @@ var functions = {
 
     getinfoMedfolder: async function (req, res) {
         console.log(req.payload);
-      let medfolders = await MedFolder.find({doctorId: req.payload._id});
+      let medfolders = await Medfolder.find({doctorId: req.payload._id});
       return res.json({success: true, medfolders: medfolders});
     }
 }
