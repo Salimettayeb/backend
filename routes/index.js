@@ -11,12 +11,19 @@ const router = express.Router()
 const jwt = require('express-jwt');
 const config = require('../config/dbconfig')
 
+/*
 const doctorAuth = jwt({
   secret: config.secret,
   doctorProperty: 'payload',
   algorithms: ['HS256']
 });
+*/
 
+const doctorAuth = (req,res,next)=>{
+        console.log(req);
+        next();
+    };
+  
 
 
 
