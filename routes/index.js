@@ -13,7 +13,8 @@ const config = require('../config/dbconfig')
 
 const doctorAuth = jwt({
   secret: config.secret,
-  doctorProperty: 'payload'
+  doctorProperty: 'payload',
+  algorithms: ['HS256']
 });
 
 
