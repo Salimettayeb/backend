@@ -105,6 +105,10 @@ router.get('/fichepatient/getinfofiche', doctorAuth, actionfiche.getinfoFiche)
 //Add new consultation 
 router.post('/consultation/addnewconsultation', actionconsultation.addNewConsultation)
 
+
+//get info consultation
+router.get('/consultation/getinfoconsultation', doctorAuth, actionconsultation.getinfoConsultation)
+
 //add new appoinment 
 router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
 
