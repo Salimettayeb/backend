@@ -107,7 +107,7 @@ router.post('/consultation/addnewconsultation', actionconsultation.addNewConsult
 
 
 //get info consultation
-router.get('/consultation/getinfoconsultation', doctorAuth, actionconsultation.getinfoConsultation)
+//router.get('/consultation/getinfo', doctorAuth, actionconsultation.getinfoConsultation)
 
 //add new appoinment 
 router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
