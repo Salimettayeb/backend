@@ -1,17 +1,17 @@
-var Fiche = require('../models/fiche')
+var Appoinment = require('../models/appoinment')
 var jwt = require('jwt-simple')
 var config = require('../config/dbconfig')
 
 var functions = {
-    addNewFiche: function (req, res) {
+    addNewAppoinment: function (req, res) {
         console.log(req.body)
         console.log("ddddddddddddd")
 
-        if ((!req.body.doctorId) || (!req.body.name) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
+        if ((!req.body.doctorId) || (!req.body.gender) ||  (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
-            var newFiche = Fiche({
+            var newAppoinment = Appoinment({
                 doctorId: req.body.doctorId,
                 gender: req.body.gender,
                 filenumber: req.body.filenumber,
@@ -28,7 +28,7 @@ var functions = {
                 cityChosed: req.body.cityChosed,
                 
             });
-            newFiche.save(function (err, newFiche) {
+            newAppoinment.save(function (err, newAppoinment) {
                 console.log("ddddddddddddd")
                 if (err) {
                     console.log(err);
@@ -43,10 +43,10 @@ var functions = {
        
     },
 
-    getinfoFiche: async function (req, res) {
+    getinfoAppoinment: async function (req, res) {
         console.log(req.payload);
-      let fiches = await Fiche.find({doctorId: req.payload._id});
-      return res.json({success: true, fiches: fiches});
+      let appoinments = await Appoinment.find({doctorId: req.payload._id});
+      return res.json({success: true, appoinments: appoinments});
     }
 
 }
