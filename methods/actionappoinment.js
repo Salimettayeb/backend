@@ -1,30 +1,41 @@
-var Appoinment = require('../models/appoinment')
+var Fiche = require('../models/fiche')
 var jwt = require('jwt-simple')
 var config = require('../config/dbconfig')
-const appoinment = require('../models/appoinment')
 
 var functions = {
-    addNewAppoinment: function (req, res) {
+    addNewFiche: function (req, res) {
         console.log(req.body)
-        if ((!req.body.doctorId) || (!req.body.name) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.date) || (!req.body.time)) {
+        console.log("ddddddddddddd")
+
+        if ((!req.body.doctorId) || (!req.body.name) || (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
-            var newAppoinment = Appoinment({
+            var newFiche = Fiche({
                 doctorId: req.body.doctorId,
-                name: req.body.name,
+                gender: req.body.gender,
+                filenumber: req.body.filenumber,
+                firstname: req.body.firstname,
+                lastname: req.body.lastname,
+                dateofbirth: req.body.dateofbirth,
+                age: req.body.age,
+                profession: req.body.profession,
+                valueChoose: req.body.valueChoose,
+                childChosed: req.body.childChosed,
                 phonenumber: req.body.phonenumber,
                 email: req.body.email,
-                date: req.body.date,
-                time: req.body.time,
+                address: req.body.address,
+                cityChosed: req.body.cityChosed,
                 
             });
-            newAppoinment.save(function (err, newAppoinment) {
+            newFiche.save(function (err, newFiche) {
+                console.log("ddddddddddddd")
                 if (err) {
                     console.log(err);
                     res.json({success: false, msg: 'Failed to save'})
                 }
                 else {
+                    console.log("ssqvedd");
                     res.json({success: true, msg: 'Successfully saved'})
                 }
             })
@@ -32,10 +43,10 @@ var functions = {
        
     },
 
-    getinfoAppoinment: async function (req, res) {
+    getinfoFiche: async function (req, res) {
         console.log(req.payload);
-      let appoinments = await Appoinment.find({doctorId: req.payload._id});
-      return res.json({success: true, appoinments: appoinments});
+      let fiches = await Fiche.find({doctorId: req.payload._id});
+      return res.json({success: true, fiches: fiches});
     }
 
 }
