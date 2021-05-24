@@ -6,27 +6,17 @@ var functions = {
     addNewAppoinment: function (req, res) {
         console.log(req.body)
         console.log("ddddddddddddd")
-
-        if ((!req.body.doctorId) || (!req.body.gender) ||  (!req.body.filenumber) || (!req.body.firstname) || (!req.body.lastname) || (!req.body.dateofbirth) ||(!req.body.age) || (!req.body.profession) || (!req.body.valueChoose) || (!req.body.childChosed) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.address) || (!req.body.cityChosed)) {
+        if ((!req.body.doctorId) || (!req.body.name) ||  (!req.body.phonenumber) || (!req.body.email) || (!req.body.date) || (!req.body.time)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newAppoinment = Appoinment({
                 doctorId: req.body.doctorId,
-                gender: req.body.gender,
-                filenumber: req.body.filenumber,
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                dateofbirth: req.body.dateofbirth,
-                age: req.body.age,
-                profession: req.body.profession,
-                valueChoose: req.body.valueChoose,
-                childChosed: req.body.childChosed,
+                name: req.body.name,
                 phonenumber: req.body.phonenumber,
                 email: req.body.email,
-                address: req.body.address,
-                cityChosed: req.body.cityChosed,
-                
+                date: req.body.date,
+                time: req.body.time,   
             });
             newAppoinment.save(function (err, newAppoinment) {
                 console.log("ddddddddddddd")

@@ -31,9 +31,9 @@ app.use(passport.initialize())
 require('./config/passport')(passport)
 require('./config/passportdoctor')(passport)
 require('./config/passportsecretaire')(passport)
-require('./config/passportaddpatient')(passport)
-require('./config/passportaddconsultation')(passport)
-require('./config/passportmedicalfolder')(passport)
+//require('./config/passportaddpatient')(passport)
+//require('./config/passportaddconsultation')(passport)
+//require('./config/passportmedicalfolder')(passport)
 
 
 

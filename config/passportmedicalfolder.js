@@ -1,7 +1,7 @@
 var JwtStrategy = require('passport-jwt').Strategy
 var ExtractJwt = require('passport-jwt').ExtractJwt
 
-var Medfolder = require('../models/medfolder')
+var MedFolder = require('../models/medfolder')
 var config = require('./dbconfig')
 
 module.exports = function (passport) {
@@ -11,7 +11,7 @@ module.exports = function (passport) {
     opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt')
 
     passport.use(new JwtStrategy(opts, function (jwt_payload, done) {
-        Medfolder.find({
+        MedFolder.find({
             id: jwt_payload.id
         }, function (err, medfolder) {
                 if (err) {
