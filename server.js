@@ -10,6 +10,7 @@ const fiche = require('./models/fiche')
 const consultation = require('./models/consultation')
 const appoinment = require('./models/appoinment')
 const medfolder = require('./models/medfolder')
+const contact = require('./models/contact')
 
 const bodyParser = require('body-parser')
 
