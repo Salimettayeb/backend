@@ -50,6 +50,9 @@ router.get('/appoinments', (req, res) => {
 router.get('/medicalfolders', (req, res) => {
     res.send('medicalfolders')
 })
+router.get('/contact', (req, res) => {
+    res.send('contact')
+})
 //@desc Adding new user
 //@route POST /adduser
 router.post('/adduser', actions.addNew)
