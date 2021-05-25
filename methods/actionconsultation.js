@@ -6,8 +6,7 @@ var functions = {
     addNewConsultation: function (req, res) {
         console.log(req.body)
         console.log("ddddddddddddd")
-
-        if ((!req.body.doctorId) || (!req.body.date) || (!req.body.time) || (!req.body.name) || (!req.body.filenumber) || (!req.body.weight) ||(!req.body.height) || (!req.body.reasonofconsultation) || (!req.body.diagnosticresult) || (!req.body.notes)) {
+        if ((!req.body.doctorId) || (!req.body.date) || (!req.body.time) || (!req.body.name) || (!req.body.filenumber) || (!req.body.weight) || (!req.body.height) || (!req.body.reasonofconsultation) || (!req.body.diagnosticresult) || (!req.body.notes)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
@@ -21,8 +20,7 @@ var functions = {
                 height: req.body.height,
                 reasonofconsultation: req.body.reasonofconsultation,
                 diagnosticresult: req.body.diagnosticresult,
-                notes: req.body.notes,
-                
+                notes: req.body.notes,      
             });
             newConsultation.save(function (err, newConsultation) {
                 console.log("ddddddddddddd")
