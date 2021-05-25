@@ -6,7 +6,7 @@ var functions = {
     addNewAppoinment: function (req, res) {
         console.log(req.body)
         console.log("ddddddddddddd")
-        if ((!req.body.doctorId) || (!req.body.name) ||  (!req.body.phonenumber) || (!req.body.email) || (!req.body.date) || (!req.body.time)) {
+        if ((!req.body.doctorId) || (!req.body.name) || (!req.body.phonenumber) || (!req.body.email) || (!req.body.date) || (!req.body.time)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
