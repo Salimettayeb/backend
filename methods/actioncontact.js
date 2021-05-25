@@ -10,7 +10,7 @@ var functions = {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
-            var newContact = Contact({
+        var newContact = Contact({
                 doctorId: req.body.doctorId,
                 name: req.body.name,
                 job: req.body.job,
