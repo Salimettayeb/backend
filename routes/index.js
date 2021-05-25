@@ -6,6 +6,7 @@ const actionfiche = require('../methods/actionfiche')
 const actionconsultation =require('../methods/actionconsultation')
 const actionappoinment =require('../methods/actionappoinment')
 const actionmedfolder =require('../methods/actionmedfolder')
+const actioncontact = require ('../methods/actioncontact')
 const router = express.Router()
 
 const jwt = require('jsonwebtoken');
@@ -107,7 +108,7 @@ router.post('/consultation/addnewconsultation', actionconsultation.addNewConsult
 
 
 //get info consultation
-router.get('/consultation/getinfoconsultation', doctorAuth, actionconsultation.getinfoConsultation)
+router.get('/consultation/getinfoconsult', doctorAuth, actionconsultation.getinfoConsultation)
 
 //add new appoinment 
 router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
@@ -115,6 +116,14 @@ router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
 //get info appoinments 
 
 router.get('/appoinment/getinfo', doctorAuth, actionappoinment.getinfoAppoinment)
+
+
+//add new contact 
+router.post('/contact/addnewcontact', actioncontact.addNewContact)
+
+
+//get info contact
+router.get('/contact/getinfocontact', doctorAuth, actioncontact.getinfoContact)
 
 
 
