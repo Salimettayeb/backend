@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt')
 var rendezvousSchema = new Schema({
-    doctorId: {
+    userId: {
         type: Schema.Types.ObjectId,
         ref:"User",
         required: true
