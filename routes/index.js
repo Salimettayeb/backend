@@ -7,6 +7,9 @@ const actionconsultation =require('../methods/actionconsultation')
 const actionappoinment =require('../methods/actionappoinment')
 const actionmedfolder =require('../methods/actionmedfolder')
 const actioncontact = require ('../methods/actioncontact')
+const actionrendezvous = require ('../methods/actionrendezvous')
+
+
 const router = express.Router()
 
 const jwt = require('jsonwebtoken');
@@ -52,6 +55,9 @@ router.get('/medicalfolders', (req, res) => {
 })
 router.get('/contact', (req, res) => {
     res.send('contact')
+})
+router.get('/rendezvous', (req, res) => {
+    res.send('rendezvous')
 })
 //@desc Adding new user
 //@route POST /adduser
@@ -111,7 +117,7 @@ router.post('/consultation/addnewconsultation', actionconsultation.addNewConsult
 
 
 //get info consultation
-router.get('/consultation/getinfoconsult', doctorAuth, actionconsultation.getinfoConsultation)
+router.get('/consultation/getinfoconsultation', doctorAuth, actionconsultation.getinfoConsultation)
 
 //add new appoinment 
 router.post('/appoinment/addnewappoinment', actionappoinment.addNewAppoinment)
@@ -136,7 +142,8 @@ router.post('/medicalfolder/addnewmedfolder', actionmedfolder.addNewMedFolder)
 //get info medical folder
 router.get('/medicalfolder/getinfomedicalfolder', doctorAuth, actionmedfolder.getinfoMedFolder)
 
- 
+ //Add new consultation 
+router.post('/rendezvous/addnewrendezvous', actionrendezvous.addNewRendezvous)
 
 
 module.exports = router
