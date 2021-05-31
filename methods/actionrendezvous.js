@@ -34,6 +34,12 @@ var functions = {
         console.log(req.payload);
       let rendezvouss = await Rendezvous.find({userId: req.payload._id});
       return res.json({success: true, rendezvouss: rendezvouss});
+    },
+    getinfoRendezvousdoctor: async function (req, res) {
+        console.log(req.payload);
+      let rendezvouss = await Rendezvous.find({doctorId: req.payload._id}).populate('userId');
+      return res.json({success: true, rendezvouss: rendezvouss});
     }
+
 }
     module.exports = functions
