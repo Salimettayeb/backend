@@ -27,6 +27,16 @@ const doctorAuth = (req,res,next)=>{
         next();
     });  
     };
+    const userAuth = (req,res,next)=>{
+        const token = req.headers["authorization"].split(' ')[1];
+        jwt.verify(token, config.secret, (err, user) => {
+            if (err) {
+                return res.status(403);
+            }
+            req.payload = user;
+            next();
+        });  
+        };
 
 router.get('/', (req, res) => {
     res.send('Hello World')
@@ -144,6 +154,9 @@ router.get('/medicalfolder/getinfomedicalfolder', doctorAuth, actionmedfolder.ge
 
  //Add new consultation 
 router.post('/rendezvous/addnewrendezvous', actionrendezvous.addNewRendezvous)
+
+//Add new consultation 
+router.get('/rendezvous/getinforendezvous', userAuth, actionrendezvous.getinfoRendezvous)
 
 
 module.exports = router
