@@ -156,7 +156,7 @@ router.get('/medicalfolder/getinfomedicalfolder', doctorAuth, actionmedfolder.ge
 router.post('/rendezvous/addnewrendezvous', actionrendezvous.addNewRendezvous)
 
 //Add new consultation 
-router.get('/rendezvous/getinforendezvous', userAuth, actionrendezvous.getinfoRendezvous)
+router.get('/rendezvous/getinforendezvous', doctorAuth, actionrendezvous.getinfoRendezvous)
 
 
 module.exports = router
