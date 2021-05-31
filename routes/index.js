@@ -8,6 +8,8 @@ const actionappoinment =require('../methods/actionappoinment')
 const actionmedfolder =require('../methods/actionmedfolder')
 const actioncontact = require ('../methods/actioncontact')
 const actionrendezvous = require ('../methods/actionrendezvous')
+const actiondailyrecip = require ('../methods/actiondailyrecip')
+
 
 
 const router = express.Router()
@@ -68,6 +70,9 @@ router.get('/contact', (req, res) => {
 })
 router.get('/rendezvous', (req, res) => {
     res.send('rendezvous')
+})
+router.get('/dailyrecip', (req, res) => {
+    res.send('dailyrecip')
 })
 //@desc Adding new user
 //@route POST /adduser
@@ -156,8 +161,20 @@ router.get('/medicalfolder/getinfomedicalfolder', doctorAuth, actionmedfolder.ge
 router.post('/rendezvous/addnewrendezvous', actionrendezvous.addNewRendezvous)
 
 //Add new consultation 
-router.get('/rendezvous/getinforendezvous', actionrendezvous.getinfoRendezvous)
+router.get('/rendezvous/getinforendezvous', userAuth, actionrendezvous.getinfoRendezvous)
 
 router.get('/rendezvous/getinforendezvousdoctor', doctorAuth, actionrendezvous.getinfoRendezvousdoctor)
+
+
+
+ //Add new dailyrecip 
+ router.post('/dailyrecip/adddailyrecip', actiondailyrecip.addNewDailyrecip)
+
+
+ //get dailyrecip 
+
+
+ router.get('/dailyrecip/adddailyrecip', doctorAuth, actiondailyrecip.getinfoDailyrecip)
+
 
 module.exports = router
