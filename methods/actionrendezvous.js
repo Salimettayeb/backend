@@ -5,11 +5,12 @@ var config = require('../config/dbconfig')
 var functions = {
     addNewRendezvous: function (req, res) {
         console.log(req.body)
-        if ((!req.body.userId) || (!req.body.date) || (!req.body.time) || (!req.body.contact)) {
+        if ((!req.body.doctorId) || (!req.body.userId) || (!req.body.date) || (!req.body.time) || (!req.body.contact)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newRendezvous = Rendezvous({
+                doctorId: req.body.doctorId,
                 userId: req.body.userId,
                 date: req.body.date,
                 time: req.body.time,

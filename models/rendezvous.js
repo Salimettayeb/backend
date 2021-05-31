@@ -7,6 +7,11 @@ var rendezvousSchema = new Schema({
         ref:"User",
         required: true
     },
+    doctorId: {
+        type: Schema.Types.ObjectId,
+        ref:"Doctor",
+        required: true
+    },
     date: {
         type: String,
         required: true
