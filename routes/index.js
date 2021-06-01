@@ -9,7 +9,7 @@ const actionmedfolder =require('../methods/actionmedfolder')
 const actioncontact = require ('../methods/actioncontact')
 const actionrendezvous = require ('../methods/actionrendezvous')
 const actiondailyrecip = require ('../methods/actiondailyrecip')
-const actioncabinetrecip = require ('../methods/actioncabinetexp')
+const actioncabinetrecip = require ('../methods/actioncabinetrecip')
 
 
 const router = express.Router()
