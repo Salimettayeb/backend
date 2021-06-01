@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt')
-var CabinetexpSchema = new Schema({
+var CabinetrecipSchema = new Schema({
     doctorId: {
         type: Schema.Types.ObjectId,
         ref:"Doctor",
@@ -19,4 +19,4 @@ var CabinetexpSchema = new Schema({
 
 
 
-module.exports = mongoose.model('Cabinetexp', CabinetexpSchema)
+module.exports = mongoose.model('Cabinetrecip', CabinetrecipSchema)

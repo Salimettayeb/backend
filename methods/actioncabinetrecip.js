@@ -1,4 +1,4 @@
-var Cabinetexp = require('../models/cabinetexp')
+var Cabinetrecip = require('../models/cabinetrecip')
 var jwt = require('jwt-simple')
 var config = require('../config/dbconfig')
 
@@ -10,12 +10,12 @@ var functions = {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
-        var newCabinetrecip = Cabinetexp({
+        var newCabinetrecip = Cabinetrecip({
                 doctorId: req.body.doctorId,
                 title: req.body.title,
                 amount: req.body.amount,   
             });
-            newCabinetexp.save(function (err, newCabinetexp) {
+            newCabinetrecip.save(function (err, newCabinetexp) {
                 console.log("ddddddddddddd")
                 if (err) {
                     console.log(err);
@@ -30,10 +30,10 @@ var functions = {
        
     },
 
-    getinfoCabinetexp: async function (req, res) {
+    getinfoCabinetrecip: async function (req, res) {
         console.log(req.payload);
-      let cabinetexps = await Cabinetexp.find({doctorId: req.payload._id});
-      return res.json({success: true, cabinetexps: cabinetexps});
+      let cabinetrecips = await Cabinetrecip.find({doctorId: req.payload._id});
+      return res.json({success: true, cabinetrecips: cabinetrecips});
     }
 
 }

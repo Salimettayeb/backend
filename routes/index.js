@@ -179,7 +179,7 @@ router.post('/rendezvous/getinforendezvousdoctorbystatus', doctorAuth, actionren
 
 
  //Add new dailyrecip 
- router.post('/cabinetexp/adddailyrecip', actioncabinetrecip.addNewCabinetrecip)
+ router.post('/cabinetexp/addcabinetexp', actioncabinetrecip.addNewCabinetrecip)
 
 
  //get dailyrecip 
