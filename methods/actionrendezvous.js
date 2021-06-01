@@ -38,8 +38,14 @@ var functions = {
     getinfoRendezvousdoctor: async function (req, res) {
         console.log(req.payload);
       let rendezvouss = await Rendezvous.find({doctorId: req.payload._id}).populate('userId');
-      return res.json({success: true, rendezvouss: rendezvouss});
+      return res.json({success: true, rendezvous: rendezvouss});
+    },
+    updateRdvStatus: async function (req, res) {
+      let rdv = await Rendezvous.findOne({_id: req.body._id});
+      rdv.status = req.body.status;
+      return res.json({success: true, msg: "Status updated"});
     }
+
 
 }
     module.exports = functions
