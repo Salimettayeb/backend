@@ -9,7 +9,7 @@ const actionmedfolder =require('../methods/actionmedfolder')
 const actioncontact = require ('../methods/actioncontact')
 const actionrendezvous = require ('../methods/actionrendezvous')
 const actiondailyrecip = require ('../methods/actiondailyrecip')
-
+const actioncabinetrecip = require ('../methods/actioncabinetexp')
 
 
 const router = express.Router()
@@ -175,6 +175,15 @@ router.post('/rendezvous/getinforendezvousdoctorbystatus', doctorAuth, actionren
 
  //get dailyrecip 
  router.get('/dailyrecip/getinfodailyrecipdoctor', doctorAuth, actiondailyrecip.getinfoDailyrecip)
+
+
+
+ //Add new dailyrecip 
+ router.post('/cabinetexp/adddailyrecip', actioncabinetrecip.addNewCabinetrecip)
+
+
+ //get dailyrecip 
+ router.get('/cabinetexp/getinfocabinetexpdoctor', doctorAuth, actioncabinetrecip.getinfoCabinetrecip)
 
 
 module.exports = router
