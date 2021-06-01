@@ -174,9 +174,7 @@ router.post('/rendezvous/getinforendezvousdoctorbystatus', doctorAuth, actionren
 
 
  //get dailyrecip 
-
-
- router.get('/dailyrecip/adddailyrecip', doctorAuth, actiondailyrecip.getinfoDailyrecip)
+ router.get('/dailyrecip/getinfodailyrecipdoctor', doctorAuth, actiondailyrecip.getinfoDailyrecip)
 
 
 module.exports = router
