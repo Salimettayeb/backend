@@ -43,6 +43,7 @@ var functions = {
     updateRdvStatus: async function (req, res) {
       let rdv = await Rendezvous.findOne({_id: req.body._id});
       rdv.status = req.body.status;
+      await rdv.save();
       return res.json({success: true, msg: "Status updated"});
     }
 
