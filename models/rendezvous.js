@@ -24,6 +24,12 @@ var rendezvousSchema = new Schema({
         type: String,
         required: true
     },
+    status: {
+        type: Number,
+        enum:[1,2,3],
+        default: 1,
+        required: true
+    }
 
 })
 
