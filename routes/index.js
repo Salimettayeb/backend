@@ -165,6 +165,7 @@ router.get('/rendezvous/getinforendezvous', userAuth, actionrendezvous.getinfoRe
 
 router.get('/rendezvous/getinforendezvousdoctor', doctorAuth, actionrendezvous.getinfoRendezvousdoctor)
 router.put('/rendezvous/updatestatus', doctorAuth, actionrendezvous.updateRdvStatus)
+router.post('/rendezvous/getinforendezvousdoctorbystatus', doctorAuth, actionrendezvous.getRdvByStatus)
 
 
 

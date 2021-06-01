@@ -49,7 +49,12 @@ var functions = {
       console.log(rdv);
 
       return res.json({success: true, msg: "Status updated"});
-    }
+    },
+    getRdvByStatus: async function (req, res) {
+      let rdvstatus = await Rendezvous.find({doctorId: req.payload._id,status: req.body.status}).populate('userId');
+      return res.json({success: true, rdvstatus: rdvstatus});
+    },
+
 
 
 }
