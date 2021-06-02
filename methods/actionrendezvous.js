@@ -5,16 +5,18 @@ var config = require('../config/dbconfig')
 var functions = {
     addNewRendezvous: function (req, res) {
         console.log(req.body)
-        if ((!req.body.doctorId) || (!req.body.userId) || (!req.body.date) || (!req.body.time) || (!req.body.contact)) {
+        if ((!req.body.doctorId) || (!req.body.userId) || (!req.body.patientname) || (!req.body.contact) || (!req.body.phonenumber) || (!req.body.date) || (!req.body.time)) {
             res.json({success: false, msg: 'Enter all fields'})
         }
         else {
             var newRendezvous = Rendezvous({
                 doctorId: req.body.doctorId,
                 userId: req.body.userId,
-                date: req.body.date,
-                time: req.body.time,
+                patientname: req.body.patientname,
                 contact: req.body.contact,
+                phonenumber: req.body.phonenumber,
+                date: req.body.time,
+                time: req.body.contact,
 
             });
             newRendezvous.save(function (err, newRendezvous) {
@@ -40,6 +42,10 @@ var functions = {
       let rendezvouss = await Rendezvous.find({doctorId: req.payload._id}).populate('userId');
       return res.json({success: true, rendezvous: rendezvouss});
     },
+    
+
+
+
     updateRdvStatus: async function (req, res) {
         console.log(req.body);
       let rdv = await Rendezvous.findOne({_id: req.body._id});
